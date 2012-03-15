@@ -1,0 +1,9 @@
+{
+	"create-app": "commands.CreateApp",
+	"createapp": "commands.CreateApp",
+	"create.app": "commands.CreateApp",
+
+	"run-app": "commands.RunApp",
+	"runapp": "commands.RunApp",
+	"run.app": "commands.RunApp"
+}
