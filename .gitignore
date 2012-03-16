@@ -1,13 +1,13 @@
 #
 # Ignore all compiled Python files
 #
-application/commands/*.pyc
-application/engine/*.pyc
+blast/commands/*.pyc
+blast/engine/*.pyc
 
 
 #
 # Ignore all Tomcat working and log directories
 #
-application/engine/tomcat/logs/**
-application/engine/tomcat/work/**
+blast/engine/tomcat/logs/**
+blast/engine/tomcat/work/**
 
