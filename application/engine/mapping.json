@@ -5,5 +5,13 @@
 
 	"run-app": "commands.RunApp",
 	"runapp": "commands.RunApp",
-	"run.app": "commands.RunApp"
+	"run.app": "commands.RunApp",
+
+	"create-controller": "commands.CreateController",
+	"createcontroller": "commands.CreateController",
+	"create.controller": "commands.CreateController",
+
+	"create-view": "commands.CreateView",
+	"createview": "commands.CreateView",
+	"create.view": "commands.CreateView"
 }

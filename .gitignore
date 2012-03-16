@@ -1,0 +1,13 @@
+#
+# Ignore all compiled Python files
+#
+application/commands/*.pyc
+application/engine/*.pyc
+
+
+#
+# Ignore all Tomcat working and log directories
+#
+application/engine/tomcat/logs/**
+application/engine/tomcat/work/**
+
