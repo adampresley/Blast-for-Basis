@@ -6,6 +6,7 @@ class RunApp:
 	__args = {}
 	__cwd = ""
 	__scriptPath = ""
+	__os = "posix"
 
 	__httpPort = "0"
 	__docBase = ""
@@ -18,6 +19,8 @@ class RunApp:
 		self.__httpPort = "8080"
 		self.__docBase = self.__cwd
 
+		self.__os = os.name
+
 
 	def validate(self):
 		return True
@@ -25,6 +28,9 @@ class RunApp:
 
 	def run(self):
 		print "Running application on localhost:%s" % self.__httpPort
+
+		exeName = "catalina.bat" if self.__os == "nt" else "catalina.sh"
+		shell = True if self.__os == "nt" else False
 
 		src = self.__scriptPath + "/engine/templates/server.xml"
 		target = self.__scriptPath + "/engine/tomcat/conf/server.xml"
@@ -47,7 +53,12 @@ class RunApp:
 		#
 		# Start up Tomcat
 		#
-		subprocess.check_call([ "%s/engine/tomcat/bin/catalina.sh" % (self.__scriptPath), "run" ])
+		environment = {
+			"CATALINA_HOME": self.__scriptPath + "/engine/tomcat",
+			"JAVA_HOME": os.getenv("JAVA_HOME"),
+			"SystemRoot": os.getenv("SystemRoot")
+		}
+		subprocess.call([ "%s/engine/tomcat/bin/%s" % (self.__scriptPath, exeName), "run" ], shell = shell, env = environment)
 		sys.exit()
 
 
