@@ -47,7 +47,8 @@ class RunApp:
 		#
 		# Start up Tomcat
 		#
-		subprocess.call([ "%s/engine/tomcat/bin/catalina.sh" % (self.__scriptPath), "run" ])
+		subprocess.check_call([ "%s/engine/tomcat/bin/catalina.sh" % (self.__scriptPath), "run" ])
+		sys.exit()
 
 
 	def __fixFile(self, contents):
