@@ -13,5 +13,13 @@
 
 	"create-view": "commands.CreateView",
 	"createview": "commands.CreateView",
-	"create.view": "commands.CreateView"
+	"create.view": "commands.CreateView",
+
+	"create-service": "commands.CreateService",
+	"createservice": "commands.CreateService",
+	"create.service": "commands.CreateService",
+
+	"create-dao": "commands.CreateDAO",
+	"createdao": "commands.CreateDAO",
+	"create.dao": "commands.CreateDAO"
 }
