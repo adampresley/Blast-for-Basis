@@ -17,7 +17,7 @@ class RunApp:
 		self.__scriptPath = scriptPath
 
 		self.__httpPort = "8080"
-		self.__docBase = self.__cwd
+		self.__docBase = self.__cwd.replace("\\", "/")
 
 		self.__os = os.name
 
