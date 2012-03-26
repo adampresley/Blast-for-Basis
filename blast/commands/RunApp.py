@@ -53,11 +53,17 @@ class RunApp:
 		#
 		# Start up Tomcat
 		#
+		if os.getenv("JAVA_HOME") == None:
+			raise Exception("Please set your JAVA_HOME environment variable")
+
 		environment = {
 			"CATALINA_HOME": self.__scriptPath + "/engine/tomcat",
-			"JAVA_HOME": os.getenv("JAVA_HOME"),
-			"SystemRoot": os.getenv("SystemRoot")
+			"JAVA_HOME": os.getenv("JAVA_HOME")
 		}
+
+		if self.__os == "nt":
+			environment["SystemRoot"] = os.getenv("SystemRoot")
+
 		subprocess.call([ "%s/engine/tomcat/bin/%s" % (self.__scriptPath, exeName), "run" ], shell = shell, env = environment)
 		sys.exit()
 
