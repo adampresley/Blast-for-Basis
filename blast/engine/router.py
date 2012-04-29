@@ -13,7 +13,7 @@ class Router:
 
 	def validate(self):
 		result = True
-		if not self.__args.command[0] in self.__mapping:
+		if not self.__args.command or not self.__args.command[0] in self.__mapping:
 			result = False
 
 		return result

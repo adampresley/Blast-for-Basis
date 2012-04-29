@@ -23,7 +23,6 @@ args = parser.parse_args()
 
 print ""
 print description
-print license.read()
 print ""
 
 router = Router(args, scriptPath)
